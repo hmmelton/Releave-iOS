@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25E35F154F6FBAF7BF781EA3 /* Pods_Releave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C309D24F82A3691E4EB627A /* Pods_Releave.framework */; };
 		57AA4B56D1F20D708E0FF538 /* Pods_ReleaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A2D404F65E05FF89E73CE6 /* Pods_ReleaveUITests.framework */; };
+		57C780921F5CC065008B2DFC /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C780911F5CC065008B2DFC /* Private.swift */; };
 		57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */; };
 		57F8987D1F5BAA6100CB9915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8987C1F5BAA6100CB9915 /* ViewController.swift */; };
 		57F898801F5BAA6100CB9915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F8987E1F5BAA6100CB9915 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		29ED444E0449BAE132C2557C /* Pods-ReleaveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaveUITests/Pods-ReleaveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2A9628F27E9D8C3906D8214B /* Pods-ReleaveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaveTests/Pods-ReleaveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C309D24F82A3691E4EB627A /* Pods_Releave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Releave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57C780911F5CC065008B2DFC /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		57F898771F5BAA6100CB9915 /* Releave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Releave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F8987C1F5BAA6100CB9915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				57F898811F5BAA6100CB9915 /* Assets.xcassets */,
 				57F898831F5BAA6100CB9915 /* LaunchScreen.storyboard */,
 				57F898861F5BAA6100CB9915 /* Info.plist */,
+				57C780911F5CC065008B2DFC /* Private.swift */,
 			);
 			name = "Supplementary Files";
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			files = (
 				57F8987D1F5BAA6100CB9915 /* ViewController.swift in Sources */,
 				57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */,
+				57C780921F5CC065008B2DFC /* Private.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
