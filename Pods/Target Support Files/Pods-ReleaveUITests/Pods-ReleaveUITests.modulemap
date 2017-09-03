@@ -1,0 +1,6 @@
+framework module Pods_ReleaveUITests {
+  umbrella header "Pods-ReleaveUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
