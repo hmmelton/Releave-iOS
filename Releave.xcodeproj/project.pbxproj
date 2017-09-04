@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		25E35F154F6FBAF7BF781EA3 /* Pods_Releave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C309D24F82A3691E4EB627A /* Pods_Releave.framework */; };
 		5790C5E91F5CD56100F84B7C /* AddRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */; };
+		5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5EC1F5D03F000F84B7C /* MapViewController.swift */; };
+		5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5EF1F5D1C2700F84B7C /* Extensions.swift */; };
 		57AA4B56D1F20D708E0FF538 /* Pods_ReleaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A2D404F65E05FF89E73CE6 /* Pods_ReleaveUITests.framework */; };
 		57C780921F5CC065008B2DFC /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C780911F5CC065008B2DFC /* Private.swift */; };
 		57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */; };
@@ -43,6 +45,8 @@
 		2A9628F27E9D8C3906D8214B /* Pods-ReleaveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaveTests/Pods-ReleaveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C309D24F82A3691E4EB627A /* Pods_Releave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Releave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestroomViewController.swift; sourceTree = "<group>"; };
+		5790C5EC1F5D03F000F84B7C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5790C5EF1F5D1C2700F84B7C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		57C780911F5CC065008B2DFC /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		57F898771F5BAA6100CB9915 /* Releave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Releave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5790C5EE1F5D1C1900F84B7C /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				5790C5EC1F5D03F000F84B7C /* MapViewController.swift */,
+				5790C5EF1F5D1C2700F84B7C /* Extensions.swift */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
 		57C7808E1F5CBD1E008B2DFC /* Supplementary Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		57F898791F5BAA6100CB9915 /* Releave */ = {
 			isa = PBXGroup;
 			children = (
+				5790C5EE1F5D1C1900F84B7C /* Helper Files */,
 				57C7808E1F5CBD1E008B2DFC /* Supplementary Files */,
 				57F8987C1F5BAA6100CB9915 /* ViewController.swift */,
 				5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */,
@@ -476,8 +490,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57F8987D1F5BAA6100CB9915 /* ViewController.swift in Sources */,
+				5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */,
 				5790C5E91F5CD56100F84B7C /* AddRestroomViewController.swift in Sources */,
 				57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */,
+				5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */,
 				57C780921F5CC065008B2DFC /* Private.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

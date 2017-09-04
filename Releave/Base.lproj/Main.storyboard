@@ -34,6 +34,9 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Releave" id="4dD-5U-mXE">
+                                        <barButtonItem key="leftBarButtonItem" image="settings" id="piF-xa-mQH">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rpn-xq-bQ0">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
@@ -114,7 +117,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Square One Shopping Center" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCf-kL-1DY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Square One Shopping Center" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCf-kL-1DY" userLabel="Location Name">
                                         <rect key="frame" x="66" y="8" width="285" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="XgD-RU-Pl1"/>
@@ -139,6 +142,9 @@
                                             <constraint firstAttribute="width" secondItem="sKF-PW-mjS" secondAttribute="height" multiplier="1:1" id="bqZ-P8-3uB"/>
                                         </constraints>
                                         <state key="normal" image="checkbox_unchecked"/>
+                                        <connections>
+                                            <action selector="onCheckboxPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="MMJ-CO-PxL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTg-FR-nLV">
                                         <rect key="frame" x="8" y="82" width="53.5" height="21"/>
@@ -146,45 +152,60 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dd-ZV-4V0">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dd-ZV-4V0">
                                         <rect key="frame" x="330" y="82" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ViX-8K-v8K"/>
                                             <constraint firstAttribute="width" secondItem="2dd-ZV-4V0" secondAttribute="height" multiplier="1:1" id="g8L-gE-cia"/>
                                         </constraints>
                                         <state key="normal" image="star_unfilled"/>
+                                        <connections>
+                                            <action selector="onStarPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="Qso-9w-VpN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-MQ-3lv">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEh-MQ-3lv">
                                         <rect key="frame" x="307" y="81.5" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="djW-0N-xr9"/>
                                             <constraint firstAttribute="width" secondItem="fEh-MQ-3lv" secondAttribute="height" multiplier="1:1" id="eeK-on-89H"/>
                                         </constraints>
                                         <state key="normal" image="star_unfilled"/>
+                                        <connections>
+                                            <action selector="onStarPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="qPp-Qj-rj3"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kc-LC-prV">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kc-LC-prV">
                                         <rect key="frame" x="284" y="82" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="9Kc-LC-prV" secondAttribute="height" multiplier="1:1" id="5pE-Vg-qra"/>
                                             <constraint firstAttribute="height" constant="21" id="QqA-5a-zxT"/>
                                         </constraints>
                                         <state key="normal" image="star_unfilled"/>
+                                        <connections>
+                                            <action selector="onStarPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="iq4-T0-qiF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-ML-WMY">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-ML-WMY">
                                         <rect key="frame" x="261" y="81.5" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5j0-ML-WMY" secondAttribute="height" multiplier="1:1" id="Ihu-6y-7lI"/>
                                             <constraint firstAttribute="height" constant="21" id="X8m-dQ-nRo"/>
                                         </constraints>
                                         <state key="normal" image="star_unfilled"/>
+                                        <connections>
+                                            <action selector="onStarPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="3u4-Bh-Av5"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Q-qA-0ps">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3Q-qA-0ps">
                                         <rect key="frame" x="238" y="81.5" width="21" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="K3Q-qA-0ps" secondAttribute="height" multiplier="1:1" id="2IH-h7-XQ8"/>
                                             <constraint firstAttribute="height" constant="21" id="o6M-bN-men"/>
                                         </constraints>
                                         <state key="normal" image="star_unfilled"/>
+                                        <connections>
+                                            <action selector="onStarPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="D1g-q5-AvS"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating Comment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvC-3d-aNu">
                                         <rect key="frame" x="8" y="119" width="133" height="21"/>
@@ -204,6 +225,9 @@
                                         <state key="normal" title="Submit">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onSubmitPressed:" destination="weI-Gf-cRw" eventType="touchUpInside" id="djb-Wm-Egk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,8 +285,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentTextField" destination="X9T-2z-Naf" id="aqE-fU-YfY"/>
                         <outlet property="infoView" destination="eXU-jC-Zq5" id="5U3-dj-FTs"/>
+                        <outlet property="locationNameLabel" destination="JCf-kL-1DY" id="KbQ-z2-xfH"/>
                         <outlet property="mapView" destination="2a3-Ts-bva" id="U1t-vb-bIl"/>
+                        <outletCollection property="starButtons" destination="K3Q-qA-0ps" collectionClass="NSMutableArray" id="WZw-JR-vKD"/>
+                        <outletCollection property="starButtons" destination="5j0-ML-WMY" collectionClass="NSMutableArray" id="NJd-Qj-BBc"/>
+                        <outletCollection property="starButtons" destination="9Kc-LC-prV" collectionClass="NSMutableArray" id="rSE-fD-Jlv"/>
+                        <outletCollection property="starButtons" destination="fEh-MQ-3lv" collectionClass="NSMutableArray" id="IM6-v5-jrp"/>
+                        <outletCollection property="starButtons" destination="2dd-ZV-4V0" collectionClass="NSMutableArray" id="kkI-rQ-qbl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yO6-di-kv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,6 +303,7 @@
     </scenes>
     <resources>
         <image name="checkbox_unchecked" width="86" height="86"/>
+        <image name="settings" width="25" height="25"/>
         <image name="star_unfilled" width="86" height="86"/>
     </resources>
 </document>
