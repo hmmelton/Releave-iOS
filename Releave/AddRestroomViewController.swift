@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class AddRestroomViewController: UIViewController {
 
@@ -14,6 +15,9 @@ class AddRestroomViewController: UIViewController {
     @IBAction func onCancelPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var infoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
