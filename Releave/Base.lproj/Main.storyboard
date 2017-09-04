@@ -35,6 +35,11 @@
                                     <navigationItem title="Releave" id="4dD-5U-mXE">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rpn-xq-bQ0">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <segue destination="weI-Gf-cRw" kind="popoverPresentation" popoverAnchorBarButtonItem="Rpn-xq-bQ0" id="qdQ-LH-iJH">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -62,6 +67,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+        <!--Add Restroom View Controller-->
+        <scene sceneID="kMI-GL-9O2">
+            <objects>
+                <viewController id="weI-Gf-cRw" customClass="AddRestroomViewController" customModule="Releave" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OoC-ey-dNC"/>
+                        <viewControllerLayoutGuide type="bottom" id="MNn-H3-bSe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fEC-87-ZFG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqi-ig-051">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="3RU-H8-RgZ"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.0" green="0.56862745100000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem id="aL5-lC-qM0">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eWD-wn-cGN">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="onCancelPressed:" destination="weI-Gf-cRw" id="4kC-99-DUC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rqi-ig-051" firstAttribute="top" secondItem="fEC-87-ZFG" secondAttribute="top" id="JEL-cX-8sn"/>
+                            <constraint firstItem="Rqi-ig-051" firstAttribute="leading" secondItem="fEC-87-ZFG" secondAttribute="leading" id="lAs-k3-HGl"/>
+                            <constraint firstAttribute="trailing" secondItem="Rqi-ig-051" secondAttribute="trailing" id="qvi-AS-vKc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yO6-di-kv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="38"/>
         </scene>
     </scenes>
 </document>
