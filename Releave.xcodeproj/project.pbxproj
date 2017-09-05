@@ -11,6 +11,8 @@
 		5790C5E91F5CD56100F84B7C /* AddRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */; };
 		5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5EC1F5D03F000F84B7C /* MapViewController.swift */; };
 		5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5EF1F5D1C2700F84B7C /* Extensions.swift */; };
+		5790C5F31F5E670F00F84B7C /* APIUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5F21F5E670F00F84B7C /* APIUtil.swift */; };
+		5790C5F61F5E67D100F84B7C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5F51F5E67D100F84B7C /* Models.swift */; };
 		57AA4B56D1F20D708E0FF538 /* Pods_ReleaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A2D404F65E05FF89E73CE6 /* Pods_ReleaveUITests.framework */; };
 		57C780921F5CC065008B2DFC /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C780911F5CC065008B2DFC /* Private.swift */; };
 		57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */; };
@@ -47,6 +49,8 @@
 		5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestroomViewController.swift; sourceTree = "<group>"; };
 		5790C5EC1F5D03F000F84B7C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5790C5EF1F5D1C2700F84B7C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5790C5F21F5E670F00F84B7C /* APIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUtil.swift; sourceTree = "<group>"; };
+		5790C5F51F5E67D100F84B7C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		57C780911F5CC065008B2DFC /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
 		57F898771F5BAA6100CB9915 /* Releave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Releave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,13 +114,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		576973C91F5F4B3100D0E826 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57F8987C1F5BAA6100CB9915 /* ViewController.swift */,
+				5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */,
+				5790C5EC1F5D03F000F84B7C /* MapViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		5790C5EE1F5D1C1900F84B7C /* Helper Files */ = {
 			isa = PBXGroup;
 			children = (
-				5790C5EC1F5D03F000F84B7C /* MapViewController.swift */,
+				57C780911F5CC065008B2DFC /* Private.swift */,
 				5790C5EF1F5D1C2700F84B7C /* Extensions.swift */,
 			);
 			name = "Helper Files";
+			sourceTree = "<group>";
+		};
+		5790C5F11F5E66E800F84B7C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5790C5F21F5E670F00F84B7C /* APIUtil.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		57C7808E1F5CBD1E008B2DFC /* Supplementary Files */ = {
@@ -126,7 +148,6 @@
 				57F898811F5BAA6100CB9915 /* Assets.xcassets */,
 				57F898831F5BAA6100CB9915 /* LaunchScreen.storyboard */,
 				57F898861F5BAA6100CB9915 /* Info.plist */,
-				57C780911F5CC065008B2DFC /* Private.swift */,
 			);
 			name = "Supplementary Files";
 			sourceTree = "<group>";
@@ -156,10 +177,11 @@
 		57F898791F5BAA6100CB9915 /* Releave */ = {
 			isa = PBXGroup;
 			children = (
-				5790C5EE1F5D1C1900F84B7C /* Helper Files */,
 				57C7808E1F5CBD1E008B2DFC /* Supplementary Files */,
-				57F8987C1F5BAA6100CB9915 /* ViewController.swift */,
-				5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */,
+				5790C5EE1F5D1C1900F84B7C /* Helper Files */,
+				576973C91F5F4B3100D0E826 /* View Controllers */,
+				5790C5F11F5E66E800F84B7C /* Utils */,
+				5790C5F51F5E67D100F84B7C /* Models.swift */,
 				57F8987E1F5BAA6100CB9915 /* Main.storyboard */,
 			);
 			path = Releave;
@@ -443,9 +465,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Releave/Pods-Releave-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -491,7 +520,9 @@
 			files = (
 				57F8987D1F5BAA6100CB9915 /* ViewController.swift in Sources */,
 				5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */,
+				5790C5F31F5E670F00F84B7C /* APIUtil.swift in Sources */,
 				5790C5E91F5CD56100F84B7C /* AddRestroomViewController.swift in Sources */,
+				5790C5F61F5E67D100F84B7C /* Models.swift in Sources */,
 				57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */,
 				5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */,
 				57C780921F5CC065008B2DFC /* Private.swift in Sources */,
