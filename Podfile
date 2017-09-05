@@ -9,6 +9,9 @@ target 'Releave' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'SwiftyJSON'
 
   target 'ReleaveTests' do
     inherit! :search_paths
