@@ -7,3 +7,28 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+class APIUtil {
+    
+    // The only parameter that is set for all requests is the API key
+    private static var parameters: Parameters =
+        [ReleaveApi.RequestKeys.authKey : ReleaveApi.RequestValues.authToken]
+    
+    // MARK: Users
+    
+    // This function gets an individual user
+    static func getUser(_ id: String, completion: @escaping (JSON?, Error?) -> ()) {
+        // Add request-specific parameters
+        var localParams: Parameters = parameters
+        localParams[ReleaveApi.RequestKeys.id] = id
+        
+        Alamofire.request(ReleaveApi.Endpoints.users, method: .get, parameters: localParams, encoding: JSONEncoding.default).responseJSON { response in
+            if let data = response.result.value as! String? {
+                completion(JSON(parseJSON: data), nil)
+            }
+        }
+    }
+    
+}
