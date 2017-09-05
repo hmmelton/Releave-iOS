@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 extension String {
     // This function trims the String of white spaces and new lines
