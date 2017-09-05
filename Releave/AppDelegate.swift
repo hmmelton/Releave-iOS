@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Set API key for Google Maps and Google Places
-        GMSPlacesClient.provideAPIKey(Keys.GoogleMapsKey)
-        GMSServices.provideAPIKey(Keys.GoogleMapsKey)
+        GMSPlacesClient.provideAPIKey(Keys.googleMapsKey)
+        GMSServices.provideAPIKey(Keys.googleMapsKey)
         
         return true
     }
