@@ -73,8 +73,8 @@ class AddRestroomViewController: MapViewController, GMSMapViewDelegate, CurrentL
     
     // This function sets up the GMSMapView
     private func setUpMap() {
-        mapView.delegate = self
         mapView.isMyLocationEnabled = true
+        mapView.delegate = self
     }
     
     // This function rounds the top corners of the info section.
@@ -101,6 +101,11 @@ class AddRestroomViewController: MapViewController, GMSMapViewDelegate, CurrentL
     // Update GMSMapView to reflect new location
     func didUpdateLocation(_ camera: GMSCameraPosition) {
         mapView.animate(to: camera)
+    }
+    
+    // This function is called when the map becomes idle after moving
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        print("moved")
     }
 
 }
