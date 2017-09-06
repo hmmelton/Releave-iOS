@@ -14,21 +14,27 @@ class APIUtil {
     
     // The only parameter that is set for all requests is the API key
     private static var parameters: Parameters =
-        [ReleaveApi.RequestKeys.authKey : ReleaveApi.RequestValues.authToken]
+        [ReleaveApi.RequestKeys.authKey : SecretKeys.authToken]
     
     // MARK: Users
     
     // This function gets an individual user
-    static func getUser(_ id: String, completion: @escaping (JSON?, Error?) -> ()) {
+    static func getUser(_ id: String, completion: @escaping (User?, Error?) -> ()) {
         // Add request-specific parameters
         var localParams: Parameters = parameters
         localParams[ReleaveApi.RequestKeys.id] = id
         
+        // Send GET request to server
         Alamofire.request(ReleaveApi.Endpoints.users, method: .get, parameters: localParams, encoding: JSONEncoding.default).responseJSON { response in
             if let data = response.result.value as! String? {
-                completion(JSON(parseJSON: data), nil)
+                completion(User(JSON(parseJSON: data)), nil)
             }
         }
+    }
+    
+    // This function updates an individual user
+    static func updateUser(_ id: String, withUpdatedInfo body: Parameters, completion: @escaping (Bool?, Error?) -> ()) {
+        
     }
     
 }
