@@ -23,7 +23,7 @@ struct ReleaveApi {
     
     // Keys used in requests
     struct RequestKeys {
-        static let authKey = "api_key"
+        static let authHeader = "Authorization"
         static let id = "id"
         static let facebookId = "fb_id"
         static let stripeToken = "stripe_token"
@@ -33,5 +33,10 @@ struct ReleaveApi {
         static let minLng = "min_lng"
         static let maxLng = "max_lng"
     }
+}
+
+// Constants used as keys for UserDefaults
+struct LocalStorage {
+    static let facebookAccessToken = "FacebookAccessToken"
 }
 
