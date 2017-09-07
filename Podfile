@@ -12,6 +12,8 @@ target 'Releave' do
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod 'SwiftyJSON'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
 
   target 'ReleaveTests' do
     inherit! :search_paths
