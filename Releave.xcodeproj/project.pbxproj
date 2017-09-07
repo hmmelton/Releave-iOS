@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		25E35F154F6FBAF7BF781EA3 /* Pods_Releave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C309D24F82A3691E4EB627A /* Pods_Releave.framework */; };
 		576973CB1F5FA5E500D0E826 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576973CA1F5FA5E500D0E826 /* Constants.swift */; };
+		576973CD1F606FBC00D0E826 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576973CC1F606FBC00D0E826 /* LoginViewController.swift */; };
+		576973CF1F60808400D0E826 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576973CE1F60808400D0E826 /* Util.swift */; };
+		576973D11F60C3BF00D0E826 /* ReleaveAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576973D01F60C3BF00D0E826 /* ReleaveAPITests.swift */; };
 		5790C5E91F5CD56100F84B7C /* AddRestroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */; };
 		5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5EC1F5D03F000F84B7C /* MapViewController.swift */; };
 		5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5EF1F5D1C2700F84B7C /* Extensions.swift */; };
@@ -48,6 +51,9 @@
 		2A9628F27E9D8C3906D8214B /* Pods-ReleaveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReleaveTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReleaveTests/Pods-ReleaveTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C309D24F82A3691E4EB627A /* Pods_Releave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Releave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		576973CA1F5FA5E500D0E826 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		576973CC1F606FBC00D0E826 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		576973CE1F60808400D0E826 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		576973D01F60C3BF00D0E826 /* ReleaveAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaveAPITests.swift; sourceTree = "<group>"; };
 		5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRestroomViewController.swift; sourceTree = "<group>"; };
 		5790C5EC1F5D03F000F84B7C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5790C5EF1F5D1C2700F84B7C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 		576973C91F5F4B3100D0E826 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				576973CC1F606FBC00D0E826 /* LoginViewController.swift */,
 				57F8987C1F5BAA6100CB9915 /* ViewController.swift */,
 				5790C5E81F5CD56100F84B7C /* AddRestroomViewController.swift */,
 				5790C5EC1F5D03F000F84B7C /* MapViewController.swift */,
@@ -141,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5790C5F21F5E670F00F84B7C /* APIUtil.swift */,
+				576973CE1F60808400D0E826 /* Util.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 		57F8988E1F5BAA6100CB9915 /* ReleaveTests */ = {
 			isa = PBXGroup;
 			children = (
+				576973D01F60C3BF00D0E826 /* ReleaveAPITests.swift */,
 				57F8988F1F5BAA6100CB9915 /* ReleaveTests.swift */,
 				57F898911F5BAA6100CB9915 /* Info.plist */,
 			);
@@ -471,12 +480,22 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Releave/Pods-Releave-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				576973CF1F60808400D0E826 /* Util.swift in Sources */,
 				57F8987D1F5BAA6100CB9915 /* ViewController.swift in Sources */,
 				5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */,
 				5790C5F31F5E670F00F84B7C /* APIUtil.swift in Sources */,
@@ -529,6 +549,7 @@
 				57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */,
 				5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */,
 				57C780921F5CC065008B2DFC /* Private.swift in Sources */,
+				576973CD1F606FBC00D0E826 /* LoginViewController.swift in Sources */,
 				576973CB1F5FA5E500D0E826 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57F898901F5BAA6100CB9915 /* ReleaveTests.swift in Sources */,
+				576973D11F60C3BF00D0E826 /* ReleaveAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
