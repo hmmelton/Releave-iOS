@@ -7,13 +7,75 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="DQk-4C-kCd">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="KTp-G7-66h" customClass="LoginViewController" customModule="Releave" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0I5-BO-KfR"/>
+                        <viewControllerLayoutGuide type="bottom" id="A1p-8z-OAp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i2c-TE-sT2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="D0J-Mi-5Xg">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Releave" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH4-Kg-mlX">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="323.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                        <color key="textColor" red="0.0" green="0.56862745100000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYm-vg-aMg">
+                                        <rect key="frame" x="0.0" y="323.5" width="343" height="323.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN6-eq-WBU">
+                                                <rect key="frame" x="0.0" y="16" width="343" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.56862745100000001" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Login with Facebook">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fbLoginPressed:" destination="KTp-G7-66h" eventType="touchUpInside" id="mlJ-wx-Hgi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hN6-eq-WBU" secondAttribute="trailing" id="2rT-wE-1JH"/>
+                                            <constraint firstItem="hN6-eq-WBU" firstAttribute="top" secondItem="ZYm-vg-aMg" secondAttribute="top" constant="16" id="GCO-iA-3NH"/>
+                                            <constraint firstItem="hN6-eq-WBU" firstAttribute="leading" secondItem="ZYm-vg-aMg" secondAttribute="leading" id="mxp-lT-Hzo"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D0J-Mi-5Xg" firstAttribute="leading" secondItem="i2c-TE-sT2" secondAttribute="leadingMargin" id="5cZ-JS-WLX"/>
+                            <constraint firstItem="D0J-Mi-5Xg" firstAttribute="top" secondItem="0I5-BO-KfR" secondAttribute="bottom" id="C2P-ii-NPH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D0J-Mi-5Xg" secondAttribute="trailing" id="HNp-iJ-csG"/>
+                            <constraint firstItem="A1p-8z-OAp" firstAttribute="top" secondItem="D0J-Mi-5Xg" secondAttribute="bottom" id="KAE-nI-0BN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginToMain" id="M7S-0H-nH9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5F1-g8-2E2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="42.728635682158924"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Releave" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Releave" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -36,6 +98,9 @@
                                     <navigationItem title="Releave" id="4dD-5U-mXE">
                                         <barButtonItem key="leftBarButtonItem" image="settings" id="piF-xa-mQH">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="onSettingsPressed:" destination="BYZ-38-t0r" id="1dN-yB-jAz"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Rpn-xq-bQ0">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

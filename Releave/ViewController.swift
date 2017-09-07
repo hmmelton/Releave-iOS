@@ -8,11 +8,18 @@
 
 import UIKit
 import GoogleMaps
+import FacebookCore
+import FacebookLogin
 
 class ViewController: MapViewController, GMSMapViewDelegate, CurrentLocationDelegate {
     
     // View
     @IBOutlet weak var mapView: GMSMapView!
+    // FIXME: This should not log out the user
+    @IBAction func onSettingsPressed(_ sender: UIBarButtonItem) {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

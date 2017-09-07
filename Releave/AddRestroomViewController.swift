@@ -89,15 +89,6 @@ class AddRestroomViewController: MapViewController, GMSMapViewDelegate, CurrentL
         infoView.layer.mask = maskLayer
     }
     
-    // This function displays an alert to the user that all information sections must be filled
-    private func alertAllSectionsRequired() {
-        let alert = UIAlertController(title: "Incomplete Information", message: "All sections must be filled before a submission can be completed.", preferredStyle: UIAlertControllerStyle.alert)
-        // Add 'OK' action
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        // Present the alert
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     // Update GMSMapView to reflect new location
     func didUpdateLocation(_ camera: GMSCameraPosition) {
         mapView.animate(to: camera)
