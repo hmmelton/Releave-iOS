@@ -7,6 +7,9 @@
 //
 
 import XCTest
+import Alamofire
+import SwiftyJSON
+@testable import Releave
 
 class ReleaveAPITests: XCTestCase {
     
@@ -20,16 +23,42 @@ class ReleaveAPITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testGetUser() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // 1. Given
+        let id = "59af1dde420c050011b6b6bf"
+        
+        let promise = expectation(description: "Status: 200")
+        
+        var error: Error?
+        var result: User?
+        
+        // 2. When
+        APIUtil.getUser(id) { (r, e) in
+            error = e
+            result = r
+            
+            promise.fulfill()
+        }
+        
+        waitForExpectations(timeout: 20, handler: nil)
+        
+        // 3. Then
+        
+        // Basic result assertions
+        XCTAssert(error == nil, "Error was not nil")
+        XCTAssert(result != nil, "Result was nil")
+        
+        // JSON format assertions
+        XCTAssert(result!.firstName == "Harrison", "first_name was not 'Harrison'")
+        XCTAssert(result!.lastName == "Melton", "last_name was not 'Melton'")
+        XCTAssert(result!.email == "hmmelton@comcast.net", "email was not 'hmmelton@comcast.net'")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testUpdateUser() {
+        
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  ReleaveTests.swift
+//  ReleaveAPITests.swift
 //  ReleaveTests
 //
 //  Created by Harrison Melton on 9/2/17.
@@ -7,8 +7,8 @@
 //
 
 import XCTest
-import Alamofire
-import SwiftyJSON
+import FacebookCore
+import FacebookLogin
 @testable import Releave
 
 class ReleaveTests: XCTestCase {
@@ -21,32 +21,6 @@ class ReleaveTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-    }
-    
-    func testGetUser() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        // 1. Given
-        let id = "59af1dde420c050011b6b6bf"
-        
-        // 2. When
-        APIUtil.getUser(id) { (result, error) in
-            // 3. Then
-            
-            // Basic result assertions
-            XCTAssert(error == nil, "Error was not nil")
-            XCTAssert(result != nil, "Result was nil")
-            
-            // JSON format assertions
-            XCTAssert(result!.firstName == "Harrison", "first_name was not 'Harrison'")
-            XCTAssert(result!.lastName == "Melton", "last_name was not 'Melton'")
-            XCTAssert(result!.email == "hmmelton@comcast.net", "email was not 'hmmelton@comcast.net'")
-        }
-    }
-    
-    func testUpdateUser() {
-        
     }
     
     func testPerformanceExample() {
