@@ -50,7 +50,7 @@ class APIUtil {
         Alamofire.request(url, method: .post, parameters: body, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             
             guard let result = response.result.value as! Dictionary<String, Any>? else {
-                // Failure fetching status code - return error to completion handler
+                // Failure fetching response data - return error to completion handler
                 completion(nil, response.error)
                 return
             }
@@ -70,7 +70,7 @@ class APIUtil {
         Alamofire.request(url, method: .put, parameters: body, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             
             guard let result = response.result.value as! Dictionary<String, Any>? else {
-                // Failure fetching status code - return error to completion handler
+                // Failure fetching response data - return error to completion handler
                 completion(nil, response.error)
                 return
             }
@@ -86,6 +86,19 @@ class APIUtil {
         // Format URL with parameter
         let url = "\(ReleaveApi.Endpoints.users)/\(id)"
         
+        // Send DELETE request to server
+        Alamofire.request(url, method: .delete, parameters: nil, encoding: URLEncoding.default, headers: headers)
+            .responseJSON { response in
+                
+                guard let status = response.response?.statusCode else {
+                    // Failure fetching status code - return error to completion handler
+                    completion(nil, response.error)
+                    return
+                }
+                
+                // Tell completion handler whether or not call was successful
+                completion(status == 200, nil)
+        }
     }
     
 }

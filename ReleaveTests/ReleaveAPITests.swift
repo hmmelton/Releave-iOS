@@ -43,7 +43,6 @@ class ReleaveAPITests: XCTestCase {
             promise.fulfill()
         }
         
-        //waitForExpectations(timeout: 60, handler: nil)
         wait(for: [promise], timeout: 20)
         
         // 3. Then
@@ -84,7 +83,6 @@ class ReleaveAPITests: XCTestCase {
             promise.fulfill()
         }
         
-        //waitForExpectations(timeout: 20, handler: nil)
         wait(for: [promise], timeout: 20)
         
         // 3. Then
@@ -118,14 +116,37 @@ class ReleaveAPITests: XCTestCase {
             promise.fulfill()
         }
         
-        //waitForExpectations(timeout: 20, handler: nil)
         wait(for: [promise], timeout: 20)
         
         // 3. Then
         XCTAssert(error == nil, "Error was not nil")
         XCTAssert(result != nil, "Result was nil")
-        print("\n\n\(result)\n\n")
         XCTAssert(result!.email == "hmmelton95@gmail.com", "email was not hmmelton95@gmail.com")
+    }
+    
+    func testDeleteUserSuccess() {
+        // 1. Given
+        // Change this each time to point to dummy user
+        let id = "59b1f21174040c0012f3815a"
+        
+        let promise = expectation(description: "Status: 200")
+        
+        var result: Bool?
+        var error: Error?
+        
+        // 2. When
+        APIUtil.deleteUser(id) { (r, e) in
+            result = r
+            error = e
+            
+            promise.fulfill()
+        }
+        
+        wait(for: [promise], timeout: 20)
+        
+        // 3. Then
+        XCTAssert(error == nil, "Error was not nil")
+        XCTAssert(result!, "Result was not true")
     }
     
 }
