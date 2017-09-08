@@ -22,7 +22,7 @@ struct User {
     
     // Parse passed JSON object to initialize stored properties
     init(_ json: JSON) {
-        id = json["id"].stringValue
+        id = json["_id"].stringValue
         facebookId = json["facebook_id"].stringValue
         firstName = json["first_name"].stringValue
         lastName = json["last_name"].stringValue
@@ -48,7 +48,7 @@ struct Restroom {
     
     // Parse passed JSON object to initialize stored properties
     init(_ json: JSON) {
-        id = json["id"].stringValue
+        id = json["_id"].stringValue
         userId = json["user_id"].stringValue
         lat = json["lat"].doubleValue
         lng = json["lng"].doubleValue
