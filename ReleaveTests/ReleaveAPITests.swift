@@ -316,4 +316,79 @@ class ReleaveAPITests: XCTestCase {
         XCTAssert(result!.count == 3, "Size of restroom array was not 3")
     }
     
+    // MARK: Others
+    
+    func testLoginUserExistsSuccess() {
+        // 1. Given
+        
+        let facebookId = "123456789"
+        let userId = "59af1dde420c050011b6b6bf"
+        
+        let body: [String : Any] = [
+            "first_name": "Harrison",
+            "last_name": "Melton",
+            "email": "hmmelton@comcast.net"
+        ]
+        
+        let promise = expectation(description: "Status: 200")
+        
+        var result: User?
+        var error: APIError?
+        
+        // 2. When
+        APIUtil.login(facebookId, withBody: body) { (r, e) in
+            result = r
+            error = e
+            
+            promise.fulfill()
+        }
+        
+        wait(for: [promise], timeout: 20)
+        
+        // 3. Then
+        
+        XCTAssert(error == nil, "Error was not nil")
+        XCTAssert(result != nil, "Result was nil")
+        
+        XCTAssert(result!.id == userId, "_id did not match '59af1dde420c050011b6b6bf'")
+    }
+    
+    func testLoginUserDoesNotExistSuccess() {
+        // 1. Given
+        
+        let facebookId = "987654321"
+        
+        let body: [String : Any] = [
+            "first_name": "Octavius",
+            "last_name": "Rex",
+            "email": "o.rex@gmail.com",
+            "facebook_id": "987654321"
+        ]
+        
+        let promise = expectation(description: "Status: 200")
+        
+        var result: User?
+        var error: APIError?
+        
+        // 2. When
+        APIUtil.login(facebookId, withBody: body) { (r, e) in
+            result = r
+            error = e
+            
+            promise.fulfill()
+        }
+        
+        wait(for: [promise], timeout: 20)
+        
+        // 3. Then
+        
+        XCTAssert(error == nil, "Error was not nil")
+        XCTAssert(result != nil, "Result was nil")
+        
+        XCTAssert(result!.firstName == "Octavius", "first_name was not 'Octavius'")
+        XCTAssert(result!.lastName == "Rex", "last_name was not 'Rex'")
+        XCTAssert(result!.email == "o.rex@gmail.com", "email was not 'o.rex@gmail.com'")
+        XCTAssert(result!.facebookId == "987654321", "facebook_id was not '987654321'")
+    }
+    
 }

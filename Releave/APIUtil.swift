@@ -24,7 +24,7 @@ class APIUtil {
         let url = "\(ReleaveApi.Endpoints.login)/\(facebookId)"
         
         // Send GET request to server
-        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: body, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             
             // Format server response
             let (json, error): (JSON?, APIError?) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
