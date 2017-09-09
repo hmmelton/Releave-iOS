@@ -27,7 +27,7 @@ class APIUtil {
         Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             
             // Format server response
-            let (json, error): (JSON?, APIError?) = formatDataResponse(response: response)
+            let (json, error): (JSON?, APIError?) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
         
             if error?.statusCode == 404 {
                 // User does not exist, so make a new one
@@ -51,7 +51,7 @@ class APIUtil {
             .responseJSON { response in
             
                 // Format server response
-                let (json, error) = formatDataResponse(response: response)
+                let (json, error) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
                 // Return response to completion handler
                 completion(json == nil ? nil : User(json!), error)
         }
@@ -67,7 +67,7 @@ class APIUtil {
         Alamofire.request(url, method: .post, parameters: body, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             
             // Format server response
-            let (json, error) = formatDataResponse(response: response)
+            let (json, error) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
             // Return response to completion handler
             completion(json == nil ? nil : User(json!), error)
         }
@@ -83,7 +83,7 @@ class APIUtil {
         Alamofire.request(url, method: .put, parameters: body, encoding: URLEncoding.httpBody, headers: headers).responseJSON { response in
             
             // Format server response
-            let (json, error) = formatDataResponse(response: response)
+            let (json, error) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
             // Return response to completion handler
             completion(json == nil ? nil : User(json!), error)
         }
@@ -119,7 +119,7 @@ class APIUtil {
             .responseJSON { response in
                 
                 // Format server response
-                let (json, error) = formatDataResponse(response: response)
+                let (json, error) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
                 // Return response to completion handler
                 completion(json == nil ? nil : Restroom(json!), error)
         }
@@ -136,7 +136,7 @@ class APIUtil {
             .responseJSON { response in
                 
                 // Format server response
-                let (json, error) = formatDataResponse(response: response)
+                let (json, error) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
                 // Return response to completion handler
                 completion(json == nil ? nil : Restroom(json!), error)
         }
@@ -152,7 +152,7 @@ class APIUtil {
         Alamofire.request(url, method: .put, parameters: body, encoding: URLEncoding.httpBody, headers: headers)
             .responseJSON { response in
                 // Format server response
-                let (json, error) = formatDataResponse(response: response)
+                let (json, error) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
                 // Return response to completion handler
                 completion(json == nil ? nil : Restroom(json!), error)
             }
@@ -194,7 +194,7 @@ class APIUtil {
             .responseJSON { response in
                 
                 // Format server response
-                let (json, error) = formatDataResponse(response: response)
+                let (json, error) = formatDataResponse(response: response, withDataType: Array<Dictionary<String, Any>>.self)
                 
                 if error != nil {
                     // There was an error - return it to the completion handler
@@ -220,8 +220,8 @@ class APIUtil {
     // MARK: Helpers
     
     // This function parses a network request result, returning the appropriate value or error.
-    private static func formatDataResponse(response: DataResponse<Any>) -> (JSON?, APIError?) {
-        guard let result = response.result.value as! Dictionary<String, Any>?, let status = response.response?.statusCode else {
+    private static func formatDataResponse<T>(response: DataResponse<Any>, withDataType: T.Type) -> (JSON?, APIError?) {
+        guard let result = response.result.value as! T?, let status = response.response?.statusCode else {
             // Failure reaching server - return error to completion handler
             return (nil, APIError(statusCode: 503, description: "Failure reaching server"))
         }
