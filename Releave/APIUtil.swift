@@ -226,7 +226,7 @@ class APIUtil {
             return (nil, APIError(statusCode: 503, description: "Failure reaching server"))
         }
         
-        if status == 200 {
+        if 200 ... 299 ~= status {
             // Convert result to object of type T and return
             return (JSON(result), nil)
         } else {
