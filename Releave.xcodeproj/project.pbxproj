@@ -19,6 +19,7 @@
 		5790C5F61F5E67D100F84B7C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790C5F51F5E67D100F84B7C /* Models.swift */; };
 		57AA4B56D1F20D708E0FF538 /* Pods_ReleaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A2D404F65E05FF89E73CE6 /* Pods_ReleaveUITests.framework */; };
 		57C780921F5CC065008B2DFC /* Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C780911F5CC065008B2DFC /* Private.swift */; };
+		57CC1B421F634C1D0011DD82 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CC1B411F634C1D0011DD82 /* APIError.swift */; };
 		57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */; };
 		57F8987D1F5BAA6100CB9915 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F8987C1F5BAA6100CB9915 /* ViewController.swift */; };
 		57F898801F5BAA6100CB9915 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F8987E1F5BAA6100CB9915 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		5790C5F21F5E670F00F84B7C /* APIUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUtil.swift; sourceTree = "<group>"; };
 		5790C5F51F5E67D100F84B7C /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		57C780911F5CC065008B2DFC /* Private.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Private.swift; sourceTree = "<group>"; };
+		57CC1B411F634C1D0011DD82 /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		57F898771F5BAA6100CB9915 /* Releave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Releave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F8987A1F5BAA6100CB9915 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57F8987C1F5BAA6100CB9915 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				5790C5EF1F5D1C2700F84B7C /* Extensions.swift */,
 				5790C5F51F5E67D100F84B7C /* Models.swift */,
 				576973CA1F5FA5E500D0E826 /* Constants.swift */,
+				57CC1B411F634C1D0011DD82 /* APIError.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				5790C5F01F5D1C2700F84B7C /* Extensions.swift in Sources */,
 				5790C5F31F5E670F00F84B7C /* APIUtil.swift in Sources */,
 				5790C5E91F5CD56100F84B7C /* AddRestroomViewController.swift in Sources */,
+				57CC1B421F634C1D0011DD82 /* APIError.swift in Sources */,
 				5790C5F61F5E67D100F84B7C /* Models.swift in Sources */,
 				57F8987B1F5BAA6100CB9915 /* AppDelegate.swift in Sources */,
 				5790C5ED1F5D03F000F84B7C /* MapViewController.swift in Sources */,

@@ -25,7 +25,7 @@ class ViewController: MapViewController, GMSMapViewDelegate, CurrentLocationDele
         super.viewDidLoad()
         // Set up GMSMapView
         setUpMap()
-        
+                
         self.delegate = self
     }
     
