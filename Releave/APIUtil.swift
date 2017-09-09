@@ -24,19 +24,14 @@ class APIUtil {
         let url = "\(ReleaveApi.Endpoints.login)/\(facebookId)"
         
         // Send GET request to server
-        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { response in
+        Alamofire.request(url, method: .post, parameters: nil, encoding: URLEncoding.default, headers: headers).responseJSON { response in
             
             // Format server response
             let (json, error): (JSON?, APIError?) = formatDataResponse(response: response, withDataType: Dictionary<String, Any>.self)
         
-            if error?.statusCode == 404 {
-                // User does not exist, so make a new one
-                createUser(body, completion: completion)
-            } else {
-                // There was no 404 error - return response to completion handler
-                completion(json == nil ? nil : User(json!), error)
-                return
-            }
+            // Return response to completion handler
+            completion(json == nil ? nil : User(json!), error)
+            return
         }
     }
     
